@@ -1,8 +1,15 @@
 package controllers
 
-func AddBizInfo(c *fiber.Ctx) error {
-	biz := new(entities.Business)
-	if err := c.BodyParser(&biz); err != nil {
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/sepehrmohseni/go-web-boilerplate/database"
+	"github.com/sepehrmohseni/go-web-boilerplate/entities"
+	"github.com/sepehrmohseni/go-web-boilerplate/utils"
+)
+
+func AddSomething(c *fiber.Ctx) error {
+	tst := new(entities.Test)
+	if err := c.BodyParser(&tst); err != nil {
 		return utils.ResponseHandler(
 			c,
 			500,
@@ -12,15 +19,13 @@ func AddBizInfo(c *fiber.Ctx) error {
 			0,
 		)
 	}
-	apiKey := security.GenerateApiKey()
-	biz.ApiKey = &apiKey
-	createBiz := database.Database.Create(&biz)
-	if createBiz.Error != nil {
+	createTest := database.Database.Create(&tst)
+	if createTest.Error != nil {
 		return utils.ResponseHandler(
 			c,
 			500,
 			false,
-			createBiz.Error.Error(),
+			createTest.Error.Error(),
 			nil,
 			0,
 		)
@@ -29,8 +34,8 @@ func AddBizInfo(c *fiber.Ctx) error {
 		c,
 		201,
 		true,
-		"Your Business registered successfuly",
-		&biz,
+		"Your Test added successfuly",
+		&tst,
 		0,
 	)
 }

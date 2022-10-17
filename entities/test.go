@@ -1,7 +1,5 @@
 package entities
 
-import "gorm.io/datatypes"
-
 type Test struct {
 	ParentEntity
 
