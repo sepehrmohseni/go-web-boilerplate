@@ -34,7 +34,7 @@ func AddSomething(c *fiber.Ctx) error {
 		c,
 		201,
 		true,
-		"Your Test added successfuly",
+		"Your Test added successfully",
 		&tst,
 		0,
 	)

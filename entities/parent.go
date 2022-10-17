@@ -5,7 +5,6 @@ import (
 
 	"gorm.io/gorm"
 )
-
 type ParentEntity struct {
 	ID        uint           `gorm:"primaryKey" json:"id"`
 	CreatedAt time.Time      `json:"created_at"`
