@@ -1,0 +1,12 @@
+App:
+  Version: 0.0.1
+  Port: :5050
+  BaseURL: /api/v1
+
+Database:
+  Address: 127.0.0.1
+  Port: 3306
+  Database: your_db
+  Username: your_db_username
+  Secret: your_db_password
+  Driver: mysql
