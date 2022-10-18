@@ -7,6 +7,6 @@ import (
 )
 
 func TestRoutes(testRoute fiber.Router) {
-	// add biz info
+	// add something
 	testRoute.Post("/", controllers.AddSomething)
 }

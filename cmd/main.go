@@ -77,7 +77,7 @@ func main() {
 	metricsRoute.Get("/", monitor.New())
 
 	// test routes for app
-	testRoute := v1.Group("/tst")
+	testRoute := v1.Group("/test")
 	routes.TestRoutes(testRoute)
 
 	// starting app
